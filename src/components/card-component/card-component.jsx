@@ -1,7 +1,7 @@
 import React from 'react';
 import './card-component.css';
 
-const Card = ({ card, handleChoice, flipped }) => {
+const Card = ({ card, handleChoice, flipped, disabled }) => {
 	// const handleClick = () => {
 	//    handleChoice(card)
 	// };
@@ -15,7 +15,9 @@ const Card = ({ card, handleChoice, flipped }) => {
 					src="/img/cover.png"
 					alt="card back"
 					onClick={() => {
-						handleChoice(card);
+                  if(!disabled){
+                     handleChoice(card);
+                  }
 					}}
 				/>
 			</div>
